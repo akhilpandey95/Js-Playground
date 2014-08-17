@@ -3,8 +3,9 @@ var Filesys = require('fs');
 
 Http.createServer(function(request,reply)
 {
-	Filesys.readFile("/path/to/the/file" , "utf-8", function(Error,Data) {
-	reply.writeHead('200' ,{'Content-type' : 'text/text' });
+	Filesys.readFile("/path/to/file" , "utf-8", function(Error,Data) {
+	reply.writeHead('200' ,{'Content-type' : 'text/plain',
+       				'Connection-type': 'keep-alive'	});
 	if(Error) 
 	reply.write('In order to open a filesystem we specify the path in the readFile method');
 	/* We have to observe that in the readFile method if we are 
