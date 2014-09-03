@@ -5,8 +5,8 @@ function.
 
 Firstly install the npm package manager
 =======================================
-@ $ sudo apt-get install npm
+@$ sudo apt-get install npm
 
 #Later you need to install the packages namely
 
-@ $ npm install cheerio request
+@$ npm install cheerio request
