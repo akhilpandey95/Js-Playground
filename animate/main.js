@@ -1,3 +1,7 @@
+/* As you see these are color codes in RGB so you can vary them into other
+ * gradients also 
+ */
+
 var purple = [280 , 50 , 60];
 var blue = [196 , 77 , 55];
 var green = [75 , 100 , 40];
@@ -16,7 +20,7 @@ else if(color === "blue")
 {
 	letterColours = [blue];
 }
-else if(color === "green')
+else if(color === "green")
 {
 	letterColours = [green];
 }
@@ -28,6 +32,13 @@ else if(color === "red")
 {
 	letterColours = [red];
 }
+
+/*
+ * The Programmer has a choice of making the color that which is to be 
+ * chosen into static by giving the letterColours variable an array of 
+ * colours.
+ */
+// letterColours = [purple,red,orange,blue];
 
 if(myName === null)
 	bubbleShape="square";
