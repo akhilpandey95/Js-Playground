@@ -8,12 +8,13 @@ var fs = require('fs');
 var req = require('request');
 var data = require('cheerio');
 var exp = require('express');
+var mongo = require('mongoose');
 var call = exp();
 
 // Now let us get the data by making the request by giving the url
 
 call.get('/scrape',function(request,reply) {
-	url = 'http://doeresults.gitam.edu/onlineresults/pages/NewReportviewer1.aspx?&sem= &reg= ';
+	url = 'http://doeresults.gitam.edu/onlineresults/pages/NewReportviewer1.aspx?&sem=4&reg=1210312601';
 	request(url, function(err,response,html) {
 		if(!err)
 	{

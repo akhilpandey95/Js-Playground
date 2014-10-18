@@ -1,7 +1,7 @@
-Data Scrapping With Node JS
+Data Scrapping With Node Js
 ===========================
 Node JS is a server side language that handles all the requests on a single thread and works on the principle of event loopback as well as callback
-function.
+function. 
 
 Firstly install the npm package manager
 =======================================

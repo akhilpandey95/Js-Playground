@@ -1,10 +1,11 @@
-var cheerio = require('cheerio');
-var request = require('request');
+function generateUrl(limit) {
+	var url = 'http://localyellowpages.com/listing/';
+	var urls = [];
+	var i;
 
-var target = "http://gusac.org";
+	for(i =1 ; i< limit ; i++) {
+		urls.push(url+i);
+	}
+	return urls;
+}
 
-request(target,function(err,response,html){
-		if(!err && response.statusCode === 200) {
-			console.log(html);
-		}
-	});
