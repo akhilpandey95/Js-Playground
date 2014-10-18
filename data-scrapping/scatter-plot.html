@@ -2,6 +2,7 @@
 <html>
 <head>
 
+	<meta charset="UTF-8" >
 	<meta name= "author" content = "Akhil Pandey , Om Bhallamudi" >
 	<meta name= "description" content= "Data Analytics using Node Js
 	along with D3 Js, rendering the information to the user in the
@@ -30,8 +31,53 @@
 	  -> On X Axis - Grades
 	  -> On Y Axis - SGPA
 	  -> Set Comparison - Subjects (5 on an average)
-   		   
 	
+ Below we have declared the color and the type of quantative scale and color we want. 
+    */
+    var set_svg = d3.select("body").append("set_svg")
+    	.attr("width",set_width + set_margin.set_left + set_margin.set_right)
+    	.attr("height",set_height + set_margin.set_botton + set_margin.set_top)
+      .append("g")
+      	.attr("transform", "translate(" + set_margin.set_left + "," + set_margin.set_top + ")");	
+
+	var set_xaxis = d3.svg.axis().scale(x).orient('bottom');
+	var set_yaxis = d3.svg.axis().scale(y).orient('left');
+	var set_color = d3.scale.category20();                    
+	var set_x = d3.scale.linear().range([0,width]);
+	var set_y = d3.scale.linear().range([height],0]);
+
+	var set_margin ={set_top:40 , set_left:40 , set_right:40 , set_botton:40 };
+	var set_height = 600 - set_margin.set_top - set_margin.set_botton ; 
+	var set_width  = 1000 - set_margin.set_right - set_margin.set_left ; 
+	
+
+      /*  
+      d3.tsv('results.tsv',function(error,data){
+	data.forEach(function(x) {
+		d.SGPA = +d.SGPA;
+		d.Records = +d.Records;
+		});
+	  */
+	  
+	d3.json("data.json" , function(error,data) {
+			root = data[0];
+			validate(root);
+			});
+		
+	set_svg.append("g")
+			.attr("class", "x axis")
+			.attr("transform","translate(0," + set_height + ")")
+			.call(set_xaxis)
+		   .append("text")
+		    .attr("class","label")
+		    .attr("x",set_width)
+		    .attr("y",-5)
+		    .sty
+
+	set_svg.append("g")
+			.attr("class" , "y axis")
+			.attr("tr")	    
+		    
 
 
 	</script>
