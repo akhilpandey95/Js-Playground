@@ -1,14 +1,27 @@
+University-Results-scraping
+===========================
 
-Data Scrapping With Node JS and Python
-======================================
-Node JS is a server side language that handles all the requests on a single thread and works on the principle of event loopback as well as callback
-function.We also use the help of beautiful soup which is scrapping service that is helpfull for taking large data from 
-websites and deploy it into a data base.
+Scraping results from Gitam University's public results page. Note: No authentication is needed.
 
-Firstly install the npm package manager
-=======================================
-> $ sudo apt-get install npm
+#### PRE-REQ:
+* For GNU/Linux type environment :
+   sudo apt-get install nodejs
 
-#Later you need to install the packages namely
+* For Windows environment :
+   Open http://www.nodejs.org and Download the stuff !
 
-> $ npm install cheerio request
+#### How to Run :
+Just open the repo and just execute the command 
+> node app.js (or)
+> nodejs app.js
+
+Then open your browser and go to the localhost:3000 and your
+analytics will be up and running.
+
+
+#### TODO:
+* Expand for all branches ( branches as in engineering )
+* Making the node app deployable just by executing the app
+* Support for other Db
+* Use cache for storing intermediate results ( a memcache on top of the express server)
+* Try and learn: Use redis workers to speed up download

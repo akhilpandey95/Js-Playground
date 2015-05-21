@@ -3,7 +3,7 @@ var Filesys = require('fs');
 
 Http.createServer(function(request,reply)
 {
-	Filesys.readFile("/path/to/file" , "utf-8", function(Error,Data) {
+	Filesys.readFile("regular.js" , "utf-8", function(Error,Data) {
 	reply.writeHead('200' ,{'Content-type' : 'text/plain',
        				'Connection-type': 'keep-alive'	});
 	if(Error) 
