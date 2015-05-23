@@ -1,0 +1,46 @@
+ <!DOCTYPE html> 
+<html> 
+    <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 
+        <link rel="stylesheet" href="style.css" /> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src='script.js'></script> 
+        <title>Simple snake game</title> 
+        <style>
+            div.transbox {
+                width:30px;
+                height:30px;
+                margin:0px 0px;
+                opacity:0.8;
+                filter:alpha(opacity=0.8);
+            }
+        </style>
+    </head> 
+    <body> 
+        <div id='game'> 
+        <div class="transbox" >
+            <div id='gameField'> 
+            </div> 
+            </div>
+            <div id='gameInfo'> 
+				<div id='points'>
+					<div>Your score:</div>
+					<div id='score'>0</div>
+					<div>Speed:</div>
+					<div id='speed'>1</div>
+				</div>
+				<div id='gamemsg'>
+					<div id='nextRndMsg'>Next Round!</div>
+					<div id='loseMsg'>You lose! Try again</div>
+				</div>
+				<div id='rules'>
+					<p>Press Enter to start or restart the game</p>
+					<p>Use w-a-s-d to move</p>
+					<p>Press Esc to quit</p>
+				</div>
+            </div> 
+        </div> 
+         
+    </body> 
+</html>
