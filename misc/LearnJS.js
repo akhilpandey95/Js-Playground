@@ -27,11 +27,11 @@ var foo = 9059556034;
 var bar = 9.123456;
 
 show(foo.toString()); // The number is converted to String
-show(bar.toExponential(2)); // A string is returned and rounded using exponential notaton
+show(bar.toExponential(2)); // A string is returned and rounded using exponential notation
 show(bar.toFixed(4)); // rounds off the number to specific decimals
 show(bar.toPrecision(2)); // Rounds off with specific length
 
-show(parseInt("18000 is my first money")); // returns 10
+show(parseInt("18000 is my first money")); // returns 18000
 show(parseInt("the first time i gave 10 rupees")); // returns NaN
 
 // Number Methods --stop
