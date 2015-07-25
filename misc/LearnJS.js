@@ -36,6 +36,30 @@ show(parseInt("the first time i gave 10 rupees")); // returns NaN
 
 // Number Methods --stop
 
+// String Methods --start
+var foo_string = "Do you think foo and bar will work";
+var bar_string = "Bar is the best way to represent test statements and arguments, but bar is best";
+
+/*
+  String methods in Js = {
+   string.indexOf("stringname");
+   string.lastIndexOf("stringname");
+   string.search("stringname");
+   string.slice(begin, end);
+   string.substring(begin, end);
+   string.substr(begin, end);
+   
+   NOTE : If we observe properly the methods string.indexOf and string.search are almost one
+   and the same. 
+  }
+*/
+
+show(foo_string.indexOf("bar")); // return the index position of string bar
+show(bar_string.lastIndexOf("bar")); // returns the last index position of the string bar 
+show(bar_string.search("arguments")); // returns the position where it has found the index of arguments
+
+// String Methods --stop
+
 // Objects --start
 /*
   In Js = {
