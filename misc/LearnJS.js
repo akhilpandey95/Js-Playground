@@ -1,4 +1,5 @@
 "use strict"; // this means we are declaring the strict mode
+"allow pasting"
 
 function show(args) {
   console.log(args);
@@ -15,7 +16,7 @@ var data = {
 };
 
 var store = "";
-for(x in data) {
+for(var x in data) {
   store += data[x];
 }
 
@@ -49,14 +50,37 @@ var bar_string = "Bar is the best way to represent test statements and arguments
    string.substring(begin, end);
    string.substr(begin, end);
    
-   NOTE : If we observe properly the methods string.indexOf and string.search are almost one
-   and the same. 
+   NOTE : If we observe properly the methods string.indexOf() and string.search() are almost one
+   and the same.In the method string.search() we are actually identifying strings inside strings.
+   
+   TIP(string.slice()) : The method string.slice() essentially extracts part of a string and returns the new string
+   which is sliced. The general notation for using the string.splice method is string.slice(pos1, pos2) where in 
+   pos1 is the position of the starting index and pos2 is the position of ending index. The point to be noted here is
+   if we use the string.slice() method by passing negative parameters then it ends up counting and extracting the 
+   string from the end to the start. And if we donot pass the second parameter the method extracts the rest of the 
+   string.
+   
+   TIP(string.substring()) : The method string.slice() and string.substring() fall into the same category of methods 
+   that can be used for extracting part or parts of string from the source string. The difference in both is that we
+   cannot use negative indexes when using the method string.substring(). For example if we pass on a negative index 
+   to the method like string.substring(-7,-1) then it essentially doesnot pipe out any error indicating the mistake 
+   made for using negative index but displays the string as a whole.
+   
+   
   }
 */
 
 show(foo_string.indexOf("bar")); // return the index position of string bar
 show(bar_string.lastIndexOf("bar")); // returns the last index position of the string bar 
 show(bar_string.search("arguments")); // returns the position where it has found the index of arguments
+show(foo_string.slice(1, 7)); // returns the string "o you"
+show(foo_string.slice(-7, -1)); // returns the string "ll wor"
+show(bar_string.slice(1)); // returns "ar is the best way to represent test statements and arguments, but bar is best"
+show(bar_string.slice(7)); // returns "the best way to represent test statements and arguments, but bar is best"
+show(foo_string.substring(1,7)); // returns the string "o you"
+show(foo_string.substring(-7, -1)); // returns "" but in front end would show the entire string.
+show(bar_string.toLowerCase()); // returns the lowercase of the input string
+show(bar_string.toUpperCase()); // returns the uppercase of the input string
 
 // String Methods --stop
 
@@ -106,10 +130,10 @@ show(bar_string.search("arguments")); // returns the position where it has found
 
 // creating an oject using an Object literal
 var staff = {
-  name = "somename",
-  branch = "somebranch",
-  salary = "somesalary",
-  age = 20
+  name : "somename",
+  branch : "somebranch",
+  salary : "somesalary",
+  age : 20
 };
 
 // creating an object using new keyword 
@@ -152,6 +176,68 @@ function student(name, github_nick, url, age) {
 // Objects --stop
 
 // Good Practises --start
+
+/* Closures in Javscript */
+var a = 0;
+function counter() {
+  var i = 2;
+  return i*i;
+}
+
+function counter1() {
+  return a+= 1;
+}
+
+// this wont work as part of Js closures
+function counter_foo() {
+  var a = 0;
+  a += 1;
+}
+
+// this also wont work as part of Js closures
+function counter_bar() {
+  var c = 0;
+  function go() { c+= 1;}
+  go();
+  return counter;
+}
+
+// this will work as part of Js closures
+var counter_closure = (function () {
+  var incr;
+  return function() {return incr+= 1;}
+})();
+
+show(counter1());
+show(counter1());
+show(counter1()); // since we are added the counter three times the value of a is set to 3.
+show(counter_foo());
+show(counter_foo());
+show(counter_foo()); // this is similar to the above but doesnot set the value of a to 3, but returns undefined.
+show(counter_bar());
+show(counter_bar());
+show(counter_bar()); // Neither this works which will always set the value to 1
+show(counter_closure());
+show(counter_closure());
+show(counter_closure()); // Now this is called closures implementation in Js
+/*
+  Function Closures in Javascript is all about how are the variables being treated and 
+  referred to in the local or global scope. In Js variables can be given :
+    'local scope'
+    'global scope'
+  There is no inbuilt concept for something called private variables, so when there is 
+  a requirement for such a scenario Closures are written in Js in order to make scope 
+  for variables that are private in scope.
+  
+  Observing the functions 'counter1()', 'counter_foo()' and 'counter_bar()' there is a
+  similarity that can be observed, Basically we can understand that closures are nothing 
+  but self invoking functions in Js. Observe the example 'counter_closure()' where in we
+  are calling the function thrice and hoping to increment the functional value each time 
+  when we call the function. So this self invoking function runs only once but it increments
+  the value each time it is called. The scope of the variable is protected by the anonymous 
+  return function making us assume that this can be called implementation of private 
+  variables in Js.
+*/
 
 /* Usage of Tail Calls */
 function f(n) { 
