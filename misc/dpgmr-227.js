@@ -29,7 +29,13 @@ function create_set(foo, n) {
                                         foo[i][j] = Math.pow(n, 2).toString()
                                 }
                                 if((i == 0) && (j == 0)) {
-                                        foo[i][j] = (1 + Math.pow(n-1, 2)).toString()
+                                        //foo[i][j] = (1 + Math.pow(n-1, 2)).toString()
+                                        for(var p=0; p<=n-1; p++) {
+                                                for(var q=0; q<=n-1; q++) {
+                                                        foo[0][q] = ((Math.pow(n-1, 2) + 1) - q).toString()
+                                                        foo[q][0] = ((Math.pow(n-1, 2) + 1) + q).toString()
+                                                }
+                                        }
                                 }
                         }
                 }
@@ -47,7 +53,7 @@ function create_set(foo, n) {
 function main() {
         console.log("grid solving problem")
         var arr = []
-        create_set(arr, 7)
+        create_set(arr, 5)
 }
 
 main()
