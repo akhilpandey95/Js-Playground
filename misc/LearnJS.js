@@ -280,4 +280,116 @@ var five = [];             // instead of var five = new Array();
 var six = /()/;            // instead of var six = new RegExp();
 var seven = function(){};  // instead of var seven = new function();
 
+/* Function Executions */
+
+// Example 1
+function main() {
+        var str = []
+        str["one"] = "this is first statement"
+        str["two"] = "this is second statement"
+
+        for(x in str) {
+                console.log(str[x])
+        }
+}
+
+main();
+
+// Example 2
+(function main() {
+        var arr = []
+        arr["first"] = "this is first item"
+        arr["second"] = "this is second item"
+
+        for(x in arr) {
+                console.log(arr)
+        }
+}()
+
+/*
+ Observing Example 1 and 2 we can observe two ways to execute a function,
+ both the execution techniques are different in their own way but let us
+ see the difference between the both.
+
+ Example one shows how we are taught to execute functions in the native
+ or the traditional way, but functions can also be executed in the form
+ shown in Example two. The differnce there is main() in example one gets
+ exectuted whenver it is called, but main() in example two is executed
+ as soon as it processes the last line of code.
+
+ [NOTE] : It is important to note that if we are using global variables
+ in Example two then the code would results in a TypeError stating that
+ the object is not a function. So when your code has global variables
+ that are being referenced to inside the main or the calling function,
+ then it is a must that the variable has to be declared inside the scope
+ of that function.
+
+ */
+// Example one - execution with globals
+var f = require('fs')
+
+function main() {
+        var str = []
+        var data = f.readFileSync('one.txt', 'utf-8').toString().split("\n")
+        for(i=0; i<data.length; ++i) {
+                str[i] = data[i]
+        }
+
+        for(x in str) {
+                console.log(str[x])
+        }
+}
+
+main()
+
+// Example two - execution with locals
+(function main() {
+        var f = require('fs')
+        var str = []
+        for(x=0; x<data.length; ++x) {
+                str[x] = data[x]
+        }
+
+        for(x in str) {
+                console.log(str[x])
+        }
+})()
+/*
+ [IMP] : We should not declare the variable 'f' before the main function
+ as a global variable in example two, as said above it would result in a
+ TypeError.
+*/
+
+/* Semicolons */
+
+// Snippet one
+var foo = {}
+
+foo.code = "this is javascript empire"
+foo.engine = "node 0.12.7"
+foo.author = "akhil pandey"
+foo.version = 0.1
+
+// Snippet two
+var bar = {};
+
+bar.name = "akhil pandey";
+bar.url = "www.akhilhector.com";
+bar.github = "AkhilHector"
+bar.age = 20;
+
+if(typeof(bar) == typeof(foo)) {
+        console.log("Semicolons donot matter at all")
+}
+
+/*
+ Code Snippet one and two are the same. but the fundamental difference
+ between both the code samples is that one uses semicolons in the lang-
+ -uage semantics but whereas the other doesnot. Basically we are taught
+ to use semicolons in languages such as C, C++, Java etc since lines of
+ code are terminated using ';' but in Javascript the entire scenario is
+ different. There is absolutely no difference in execution of code with
+ or without semicolons.
+*/
+
 // Good Practices --stop
