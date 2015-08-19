@@ -1,5 +1,4 @@
 "use strict"; // this means we are declaring the strict mode
-"allow pasting"
 
 function show(args) {
 	console.log(args);
@@ -83,6 +82,78 @@ show(bar_string.toLowerCase()); // returns the lowercase of the input string
 show(bar_string.toUpperCase()); // returns the uppercase of the input string
 
 // String Methods --stop
+
+// Array Methods -- start
+var akhil = [] // creates an Array Object
+var dummyakhil = new Array() // also creates an Array Object
+
+/*
+  As explained clearly in the good practices it is general paradigm that we 
+  must follow while creating or defining arrays. In the above array creation
+  'akhil' and 'dummyakhil' are two Array Objects that are not containing any
+  value, we can also refer to these as arrays that are only initialised but 
+  donot contain any value
+*/
+
+akhil.push("akhil", "pandey", "hector", "someothername", "alsosomeothername")
+akhil.push("yetanothername", "andthelastname")
+
+var n = akhil.length
+
+if((n > 0) && (akhil.indexOf("akhil")) >=0) {
+        console.log("There exists a value akhil in the Array")
+}
+else {
+        console.log("Nope the value akhil doesnot exist in the Array")
+}
+
+dummyakhil.push("one", "two", "three", "four", "five")
+var one = dummyakhil.join()
+var two = dummyakhil.toString()
+
+if(one == two) {
+        console.log("The Methods join() and toString() perform the same work")
+}
+
+/*
+  Let us observe the methods which are part of the Array Object :
+         Array.push(),
+         Array.pop(),
+         Array.indexOf(),
+         Array.lastindexOf(),
+         Array.concat(),
+         Array.splice(),
+         Array.shift(),
+         Array.unshift(),
+         Array.reverse(),
+         Array.sort(),
+         Array.map(),
+         Array.filter(),
+         Array.some(),
+         Array.reduce(),
+         Array.reduceRight(),
+         Array.join(),
+         Array.toString()
+  All The methods are part of the powerful Array data structure and as mentioned above
+  thess are part of the Array.prototype. But Before we dive in and discuss each and every
+  method let us see if we can declare new methods of our own to the pre - existing Array
+  Object.
+
+  [TIP] : With the available list of the Array methods we can generally perform most of
+  the operations, but if we require special methods or custom methods that must be part
+  of the already existing Array Object then we define the method with by taking the concept
+  of Object.prototype.
+*/ 
+
+var boo = []
+
+Array.prototype.foo = function() {
+        console.log("We write our method inside this block")
+}
+
+boo.foo() // returns whatever is included inside the above mentioned code block 
+
+// Array Methods -- stop
 
 // Objects --start
 /*
