@@ -26,13 +26,13 @@ for(var x in data) {
 var foo = 9059556034;
 var bar = 9.123456;
 
-show(foo.toString()); // The number is converted to String
+show(foo.toString()); 		// The number is converted to String
 show(bar.toExponential(2)); // A string is returned and rounded using exponential notation
-show(bar.toFixed(4)); // rounds off the number to specific decimals
-show(bar.toPrecision(2)); // Rounds off with specific length
+show(bar.toFixed(4)); 		// rounds off the number to specific decimals
+show(bar.toPrecision(2)); 	// Rounds off with specific length
 
-show(parseInt("18000 is my first money")); // returns 18000
-show(parseInt("the first time i gave 10 rupees")); // returns NaN
+show(parseInt("18000 is my first money")); 			// returns 18000
+show(parseInt("the first time i gave 10 rupees")); 	// returns NaN
 
 // Number Methods --stop
 
@@ -88,10 +88,10 @@ var akhil = [] // creates an Array Object
 var dummyakhil = new Array() // also creates an Array Object
 
 /*
-  As explained clearly in the good practices it is general paradigm that we 
+  As explained clearly in the good practices it is general paradigm that we
   must follow while creating or defining arrays. In the above array creation
   'akhil' and 'dummyakhil' are two Array Objects that are not containing any
-  value, we can also refer to these as arrays that are only initialised but 
+  value, we can also refer to these as arrays that are only initialised but
   donot contain any value
 */
 
@@ -143,7 +143,7 @@ if(one == two) {
   the operations, but if we require special methods or custom methods that must be part
   of the already existing Array Object then we define the method with by taking the concept
   of Object.prototype.
-*/ 
+*/
 
 var boo = []
 
@@ -151,7 +151,91 @@ Array.prototype.foo = function() {
         console.log("We write our method inside this block")
 }
 
-boo.foo() // returns whatever is included inside the above mentioned code block 
+boo.foo() // returns whatever is included inside the above mentioned code block
+
+/* Adding methods to Array.prototype essentially means that we are adding methods
+ to the global array object. So an Array.prototype would actually mean that adding
+ a new prototype to the existing Array object. So a better analogy can be explained
+ with the below code snippet
+*/
+
+Array.prototype.union = function(bar) {
+        var l = this.length;
+        var n = bar.length;
+        for(i=0; i<n; ++i) {
+                this[l] = bar[i];
+                l++;
+        }
+        console.log(this);
+}
+
+var a = ["one", "two"];
+var b = ["three", "four", "five", "six", "seven"];
+var c = [1, 2];
+var d = [3, 4, 5, 6, 7];
+
+a.union(b);
+c.union(d);
+
+/* Observing the Above array prototype if we can carefully observe it is nothing
+ but a working replica of how the Array Method Array.prototype.concat() works. So
+ in concat() method another array is passed as an argument to the method and the
+ primary array concats and extends the array.
+
+ Things to lookup in the above example are how custom methods can be written in
+ order to suit the specific purpose to not only the Array prototype but also all
+ the Javscript recognized objects such as the String, Number, Regexp or the Object
+ itself.
+*/
+
+// Associative Arrays
+
+/* Preferable this is somewhat a great part of the language although this has
+ been an integral part of many programming languages like PHP and Python, there
+ is a slight change to what it offers in other programming languages to this.
+
+ [NOTE]: In Python it is not called or referred to as Associative arrays but it
+ comes with the name Dictionaries.
+*/
+
+var a = [];
+var b = [];
+
+a["one"] = "boo this is my first item";
+a["two"] = "foo this is my second item";
+a["three"] = "alas this is final item";
+
+b[0] = "oh not again the first item";
+b[1] = "cant help with the second item";
+b[3] = "finally got rid with the third item";
+
+
+console.log(a); // would display the contents of the array 'a'
+console.log(b); // would display the contents of the array 'b'
+
+var len1 = a.length;
+var len2 = b.length;
+var len3 = Object.keys(a).length;
+
+console.log(len1); // would display undefined
+console.log(len2); // would display 3
+console.log(len3); // would display 3
+
+/* The above snippet is a classic case implementation of arrays with named
+ indexes or the associative arrays. Implementation can be done as mentioned
+ above and almost all array opertions except some can be performed very
+ smoothly with named indexes. The problem arises when an array with named
+ indexes is asked for its length. When 'Array.prototype.length()' method is
+ referred it returns only the length of the array which has numberd index,
+ if we use named indexes then it is no good because the indexes are strings
+ but no longer numbers.
+
+ In such a case if we need to return the length of the named indexed array
+ then Object.keys(Arrayname).length would give the length of the array.The
+ same is explained by taking three variables 'len1', 'len2', 'len3' where
+ both 'len1', 'len3' store the lengths of a but 'len1' returns undefined
+ and 'len3' returns 3 as the length of the array.
+*/
 
 // Array Methods -- stop
 
