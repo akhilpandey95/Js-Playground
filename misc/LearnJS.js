@@ -87,13 +87,25 @@ show(bar_string.toUpperCase()); // returns the uppercase of the input string
 var akhil = [] // creates an Array Object
 var dummyakhil = new Array() // also creates an Array Object
 
+var testarr1 = 3 // initialized a number to testarr1
+var testarr2 = ["python", "javascript", "ec-252", 1, 2] // initialized an array to testarr2
+
 /*
   As explained clearly in the good practices it is general paradigm that we
   must follow while creating or defining arrays. In the above array creation
   'akhil' and 'dummyakhil' are two Array Objects that are not containing any
   value, we can also refer to these as arrays that are only initialised but
-  donot contain any value
+  donot contain any value.
 */
+
+/*
+  Before diving deep into the Array Methods, in order to verify that whether
+  an object is an array or not could be determined with the help of the 
+  method Array.isArray(array_name).
+*/
+
+Array.isArray(testarr1) // displays false since typeof(testarr1) is 'number'
+Array.isArray(testarr2) // displays true since typeof(testarr1) is an Array 'object'
 
 akhil.push("akhil", "pandey", "hector", "someothername", "alsosomeothername")
 akhil.push("yetanothername", "andthelastname")
@@ -145,6 +157,37 @@ if(one == two) {
   of Object.prototype.
 */
 
+// METHOD : Array.push() 
+var arr1 = [1, 2, 3, 4, 5];
+arr1.push(6);
+console.log(arr1); // it prints [1,2,3,4,5,6]
+
+/*
+  Array.push() is just a mutator function for adding elements to the array. So 
+  we can simply mention the element as an argument to the function Array.push()
+  and the mentioned element would be added as the last element in the array.  
+*/
+
+// METHOD : Array.unshift()
+var arr1 = [1, 2, 3, 4, 5];
+str = "akhil pandey";
+arr1.unshift(str);
+console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
+
+/*
+  Array.unshift() falls into the same category as that of Array.push(), Since
+  both of them are used as mutator functions for adding elements into an array.
+  The only difference between both the methods is that if we pass an argument 
+  to Array.unshift() then the element would be added as the first element of 
+  the array.
+  If we observe the above snippet we can see that the index of the element
+  '1' is shifted to the next place and "akhil pandey" is added as the first
+  element of the array. So unlike Array.push() this method should not be 
+  misunderstood only for adding elements since it adds elements to the start
+  of the Array.
+*/
+
+// Manipulating the Array Object by writing your own methods
 var boo = []
 
 Array.prototype.foo = function() {
