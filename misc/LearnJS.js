@@ -27,11 +27,11 @@ var foo = 9059556034;
 var bar = 9.123456;
 
 show(foo.toString()); 		// The number is converted to String
-show(bar.toExponential(2)); // A string is returned and rounded using exponential notation
+show(bar.toExponential(2));     // A string is returned and rounded using exponential notation
 show(bar.toFixed(4)); 		// rounds off the number to specific decimals
 show(bar.toPrecision(2)); 	// Rounds off with specific length
 
-show(parseInt("18000 is my first money")); 			// returns 18000
+show(parseInt("18000 is my first money")); 		// returns 18000
 show(parseInt("the first time i gave 10 rupees")); 	// returns NaN
 
 // Number Methods --stop
@@ -185,6 +185,35 @@ console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
   element of the array. So unlike Array.push() this method should not be 
   misunderstood only for adding elements since it adds elements to the start
   of the Array.
+*/
+
+// METHOD : Array.pop()
+var arr1 = [1, 2, 3, 4, 5];
+arr1.pop();       // removes last element from the array
+arr1.pop(23);     // removes last element despite giving the number as argument
+arr1.pop("lol");  // removes last element despite giving the string as argument
+console.log(arr1); // it prints [1,2,3,4]
+
+/*
+  Array.pop() is just a simple mutator function for removing the last element
+  of the array. So the method doesnot take arguments, Although if we try to 
+  pass arguments it would not take them. It performs only the basic operation 
+  of removing the last element of the Array.
+*/
+
+// METHOD : Array.shift()
+var arr1 = [1, 2, 3, 4, 5, "akhil", "chandu", "varma", "kp", "adheeth"];
+arr1.shift();
+arr1.shift(123);
+arr1.shift("lolagain");
+console.log(arr1); // it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]
+
+/* 
+  Array.shift() is no different from the above mentioned method Array.pop(),
+  although the major difference comes regarding the index of the element 
+  that which is to be removed. It removes the first element of the array.
+  Similar to Array.pop() this method also desnot take arguments and even
+  though an argument is passed it continues to perform its operation.
 */
 
 // Manipulating the Array Object by writing your own methods
