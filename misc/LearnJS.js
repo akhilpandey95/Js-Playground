@@ -274,6 +274,26 @@ console.log(arr2); // it prints [2, 5, 6, 9, 23]
   the alphabetical scale, the sorting takes place.
 */
 
+// METHOD : Array.forEach()
+function cube(num) {
+        console.log(num*num*num);
+}
+
+var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+num.forEach(cube); 
+/* it prints 
+        1
+        8
+        27
+        64
+        125
+        216
+        343
+        512
+        729
+        1000
+*/
+
 // Manipulating the Array Object by writing your own methods
 var boo = []
 
