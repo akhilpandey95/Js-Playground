@@ -26,12 +26,12 @@ for(var x in data) {
 var foo = 9059556034;
 var bar = 9.123456;
 
-show(foo.toString()); 		// The number is converted to String
+show(foo.toString()); 			// The number is converted to String
 show(bar.toExponential(2));     // A string is returned and rounded using exponential notation
-show(bar.toFixed(4)); 		// rounds off the number to specific decimals
-show(bar.toPrecision(2)); 	// Rounds off with specific length
+show(bar.toFixed(4)); 			// rounds off the number to specific decimals
+show(bar.toPrecision(2)); 		// Rounds off with specific length
 
-show(parseInt("18000 is my first money")); 		// returns 18000
+show(parseInt("18000 is my first money")); 			// returns 18000
 show(parseInt("the first time i gave 10 rupees")); 	// returns NaN
 
 // Number Methods --stop
@@ -69,17 +69,17 @@ var bar_string = "Bar is the best way to represent test statements and arguments
   }
   */
 
-show(foo_string.indexOf("bar")); // return the index position of string bar
-show(bar_string.lastIndexOf("bar")); // returns the last index position of the string bar
-show(bar_string.search("arguments")); // returns the position where it has found the index of arguments
-show(foo_string.slice(1, 7)); // returns the string "o you"
-show(foo_string.slice(-7, -1)); // returns the string "ll wor"
-show(bar_string.slice(1)); // returns "ar is the best way to represent test statements and arguments, but bar is best"
-show(bar_string.slice(7)); // returns "the best way to represent test statements and arguments, but bar is best"
-show(foo_string.substring(1,7)); // returns the string "o you"
-show(foo_string.substring(-7, -1)); // returns "" but in front end would show the entire string.
-show(bar_string.toLowerCase()); // returns the lowercase of the input string
-show(bar_string.toUpperCase()); // returns the uppercase of the input string
+show(foo_string.indexOf("bar")); 		// return the index position of string bar
+show(bar_string.lastIndexOf("bar")); 	// returns the last index position of the string bar
+show(bar_string.search("arguments"));   // returns the position where it has found the index of arguments
+show(foo_string.slice(1, 7)); 			// returns the string "o you"
+show(foo_string.slice(-7, -1)); 		// returns the string "ll wor"
+show(bar_string.slice(1)); 				// returns "ar is the best way to represent test statements and arguments, but bar is best"
+show(bar_string.slice(7)); 				// returns "the best way to represent test statements and arguments, but bar is best"
+show(foo_string.substring(1,7)); 		// returns the string "o you"
+show(foo_string.substring(-7, -1)); 	// returns "" but in front end would show the entire string.
+show(bar_string.toLowerCase()); 		// returns the lowercase of the input string
+show(bar_string.toUpperCase());			// returns the uppercase of the input string
 
 // String Methods --stop
 
@@ -100,7 +100,7 @@ var testarr2 = ["python", "javascript", "ec-252", 1, 2] // initialized an array 
 
 /*
   Before diving deep into the Array Methods, in order to verify that whether
-  an object is an array or not could be determined with the help of the 
+  an object is an array or not could be determined with the help of the
   method Array.isArray(array_name).
 */
 
@@ -157,15 +157,15 @@ if(one == two) {
   of Object.prototype.
 */
 
-// METHOD : Array.push() 
+// METHOD : Array.push()
 var arr1 = [1, 2, 3, 4, 5];
 arr1.push(6);
 console.log(arr1); // it prints [1,2,3,4,5,6]
 
 /*
-  Array.push() is just a mutator function for adding elements to the array. So 
+  Array.push() is just a mutator function for adding elements to the array. So
   we can simply mention the element as an argument to the function Array.push()
-  and the mentioned element would be added as the last element in the array.  
+  and the mentioned element would be added as the last element in the array.
 */
 
 // METHOD : Array.unshift()
@@ -177,12 +177,12 @@ console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
 /*
   Array.unshift() falls into the same category as that of Array.push(), Since
   both of them are used as mutator functions for adding elements into an array.
-  The only difference between both the methods is that if we pass an argument 
-  to Array.unshift() then the element would be added as the first element of 
+  The only difference between both the methods is that if we pass an argument
+  to Array.unshift() then the element would be added as the first element of
   the array.
   If we observe the above snippet we can see that the index of the element
   '1' is shifted to the next place and "akhil pandey" is added as the first
-  element of the array. So unlike Array.push() this method should not be 
+  element of the array. So unlike Array.push() this method should not be
   misunderstood only for adding elements since it adds elements to the start
   of the Array.
 */
@@ -196,8 +196,8 @@ console.log(arr1);  // it prints [1,2,3,4]
 
 /*
   Array.pop() is just a simple mutator function for removing the last element
-  of the array. So the method doesnot take arguments, Although if we try to 
-  pass arguments it would not take them. It performs only the basic operation 
+  of the array. So the method doesnot take arguments, Although if we try to
+  pass arguments it would not take them. It performs only the basic operation
   of removing the last element of the Array.
 */
 
@@ -208,9 +208,9 @@ arr1.shift(123);
 arr1.shift("lolagain");
 console.log(arr1); // it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]
 
-/* 
+/*
   Array.shift() is no different from the above mentioned method Array.pop(),
-  although the major difference comes regarding the index of the element 
+  although the major difference comes regarding the index of the element
   that which is to be removed. It removes the first element of the array.
   Similar to Array.pop() this method also desnot take arguments and even
   though an argument is passed it continues to perform its operation.
@@ -218,7 +218,7 @@ console.log(arr1); // it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]
 
 // METHOD : Array.splice()
 
-// case 1 : 
+// case 1 :
 var arr1 = [1, 2, 3, 4, 5];
 nums = [6, 7, 8, 9, 10]
 arr1.splice(5,0,nums)
@@ -235,13 +235,13 @@ arr3.splice(5,5);
 console.log(arr3); // it prints [1, 2, 3, 4, 5]
 
 /*
-  Array.splice() has a varied set of operations that which could be 
+  Array.splice() has a varied set of operations that which could be
   performed. If we observe case 1 we are adding elements to the array
   arr1 from the fifth index. Also if we observe in case 2, we can see
-  that without assigning a variable the elements that which are to be 
+  that without assigning a variable the elements that which are to be
   added are passed as continuous arguments.
-  It is to be noted that splice can not only perform the action of 
-  adding elements but it also does perform the action of removing 
+  It is to be noted that splice can not only perform the action of
+  adding elements but it also does perform the action of removing
   elements. In the function splice(), if we choose the value of the
   second argument to be '0' then elements would only be added from
   the specified index, although if the value is not '0' then number
@@ -254,7 +254,7 @@ arr1.reverse();
 console.log(arr1); // it prints ['adheeth', 'chandu', 'varma', 'akhil', 1]
 
 /*
-  Array.reverse() is just a mutator function that which is used to 
+  Array.reverse() is just a mutator function that which is used to
   reverse the order of elements in the array.
 */
 
@@ -267,10 +267,10 @@ console.log(arr1); // it prints ['adheeth', 'akhil', 'chandu', 'varma']
 console.log(arr2); // it prints [2, 5, 6, 9, 23]
 
 /*
-  Array.sort() is also another mutator function that which is used to 
-  put the elements in order. Both strings and numbers can be sorted 
+  Array.sort() is also another mutator function that which is used to
+  put the elements in order. Both strings and numbers can be sorted
   using the Array.sort() method. The sorting takes place in ascending
-  order, so if strings or characters are elements then depending on 
+  order, so if strings or characters are elements then depending on
   the alphabetical scale, the sorting takes place.
 */
 
@@ -280,8 +280,8 @@ function cube(num) {
 }
 
 var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-num.forEach(cube); 
-/* it prints 
+num.forEach(cube);
+/* it prints
         1
         8
         27
