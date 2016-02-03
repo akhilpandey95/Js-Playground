@@ -294,6 +294,58 @@ num.forEach(cube);
         1000
 */
 
+// METHOD : Array.reduce()
+function combine(prev, curr) {
+        return prev + curr;
+}
+
+var arr1 = [1, 2, 3, 4, 5];
+var arr2 = ["one ", "two ", "three ", "four ", "five "];
+var numsum = arr1.reduce(combine);
+var worsum = arr2.reduce(combine);
+
+console.log(numsum); // it prints 15
+console.log(worsum); // it prints "one two three four five "
+
+/*
+  Array.reduce() is a method which can be used with arrays by taking
+  a function as an argument, thereby making the function to iterate
+  over the array elements. Array.reduce() iterates over the array elements
+  and thus upon reaching the end of the Array yields a single value.
+
+  NOTE : Array.reduceRight() is more of similar to Array.reduce(), but 
+  it iterates over the array elements from the rightmost element to the
+  leftmost element, instead of going  the usual way.
+*/
+
+// METHOD : Array.map()
+function add(arr) {
+        return arr = "My name is " + arr;
+}
+
+var arr1 = ["akhil", "varma", "chandu", "adheeth", "kp"];
+var combine = arr1.map(add);
+console.log(combine); 
+/* it prints 
+[   'My name is akhil',
+    'My name is varma',
+    'My name is chandu',
+    'My name is adheeth',
+    'My name is kp' ]
+*/
+
+/*
+  Array.map() is a method which is more like an iterator function, but
+  the fundamental difference between this and Array.forEach() is that 
+  Array.map() returns a new array with the result, whereas Array.forEach()
+  doesn't return a new array with the function result.
+
+  NOTE : Array.map() is a very powerful method and it can be applied to 
+  diverse applications. Although since this method iterates over each 
+  element using Array.map() must be carefully looked upon and should 
+  not be put to use if the purpose is iterating over some elements.
+*/
+
 // Manipulating the Array Object by writing your own methods
 var boo = []
 
