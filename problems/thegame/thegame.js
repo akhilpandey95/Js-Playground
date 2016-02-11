@@ -1,10 +1,10 @@
-function solve(n) {
+function solve(n, constraint) {
    var foo = "Alex";
    var bar = "Stella";
    var count = 1;
    var res = 1;
    var len = 50;
-   while(foo < bar) {
+   while(n < constraint) {
        if(isPrime(n + count)) {
             res = count;
             process.stdout.write(`${res + " " + bar}\n`);
