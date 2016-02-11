@@ -1,15 +1,21 @@
 function solve(n) {
-   //process.stdout.write(`${foo}\n`);
    var foo = "Alex";
    var bar = "Stella";
-   var winner = "";
    var count = 1;
-   var start = n + 1;
-   var len = 10;
-   for(i = n; i < len; i++) {
-       console.log(foo + " writes", i + count);
-       console.log(bar + " writes", i + count + 1);
-       count++;
+   var res = 1;
+   var len = 50;
+   while(foo < bar) {
+       if(isPrime(n + count)) {
+            res = count;
+            process.stdout.write(`${res + " " + bar}\n`);
+            break;
+       }
+       if(isPrime(n + count + 1)) {
+           res = res + count;
+           process.stdout.write(`${res + " " + foo}\n`);
+           break;
+       }
+       count = count + 2;
    }
 }
 
@@ -22,17 +28,15 @@ function isPrime(n) {
     return n > 1;
 }
 
-/* Read the variable from STDIN
+// Read the variable from STDIN
 process.stdin.on('data', function(chunk) {
     var lines = chunk.toString().split('\n'),
     a = parseInt(lines[0]);
-    if((lines.length === 1) && (a >= 1 && a <= Math.pow(10, 5))) {
-        solve(a);
+    var len = Math.pow(10, 5);
+    if(lines.length === 1) {
+        solve(a, len);
     }
     else {
         process.stdout.write(`${"Sorry only one argument accepted"}\n`);
     }
 });
-*/
-solve(5);
-
