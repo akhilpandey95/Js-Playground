@@ -58,5 +58,6 @@ with `cheerio` and `d3.js`.
 experiements. In an attempt to say more about Javascript i wrote a self
 explanatory script named [LearnJS.js](https://github.com/AkhilHector/Js-Playground/blob/master/misc/LearnJS.js) do give it a read if interested.
 - `problems/` is just me trying to solve different interesting problems listed on  various online websites.
+- `es6` is just me trying to write ES6 [Javascript]
 
 #### Akhil Pandey
