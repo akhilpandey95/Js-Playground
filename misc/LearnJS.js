@@ -313,7 +313,7 @@ console.log(worsum); // it prints "one two three four five "
   over the array elements. Array.reduce() iterates over the array elements
   and thus upon reaching the end of the Array yields a single value.
 
-  NOTE : Array.reduceRight() is more of similar to Array.reduce(), but 
+  NOTE : Array.reduceRight() is more of similar to Array.reduce(), but
   it iterates over the array elements from the rightmost element to the
   leftmost element, instead of going  the usual way.
 */
@@ -325,8 +325,8 @@ function add(arr) {
 
 var arr1 = ["akhil", "varma", "chandu", "adheeth", "kp"];
 var combine = arr1.map(add);
-console.log(combine); 
-/* it prints 
+console.log(combine);
+/* it prints
 [   'My name is akhil',
     'My name is varma',
     'My name is chandu',
@@ -336,19 +336,19 @@ console.log(combine);
 
 /*
   Array.map() is a method which is more like an iterator function, but
-  the fundamental difference between this and Array.forEach() is that 
+  the fundamental difference between this and Array.forEach() is that
   Array.map() returns a new array with the result, whereas Array.forEach()
   doesn't return a new array with the function result.
 
-  NOTE : Array.map() is a very powerful method and it can be applied to 
-  diverse applications. Although since this method iterates over each 
-  element using Array.map() must be carefully looked upon and should 
+  NOTE : Array.map() is a very powerful method and it can be applied to
+  diverse applications. Although since this method iterates over each
+  element using Array.map() must be carefully looked upon and should
   not be put to use if the purpose is iterating over some elements.
 */
 
 // Proper way to create Arrays [Good Practice]
 
-Array.2darray = function(numrows, numcols, initvalue) {
+Array.twodarr = function(numrows, numcols, initvalue) {
         var arr = [];
         for(var i = 0; i < numrows; ++i) {
             var cols = [];
@@ -360,17 +360,17 @@ Array.2darray = function(numrows, numcols, initvalue) {
         return arr;
 }
 
-var testarr1 = Array.2darray("3", "3", 1);
-var testarr2 = Array.2darray("5", "5", "akhil"); 
+var testarr1 = Array.twodarr("3", "3", 1);
+var testarr2 = Array.twodarr("5", "5", "akhil");
 
-/* 
-  The Above is just a method to create 2d arrays, although there are 
+/*
+  The Above is just a method to create 2d arrays, although there are
   many methods to create them the above is suggestible since it would
   be like having a method which can create arrays upon need.
-  
+
   The idea here is if there is a situation where there should be two
   2d arrays to be initialised then we can limit the lines of code and
-  it would be like a predifined prototype of the Array Object.  
+  it would be like a predifined prototype of the Array Object.
 
 */
 
