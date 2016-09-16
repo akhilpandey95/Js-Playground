@@ -1,0 +1,12 @@
+#test files
+test.js
+
+#modules
+node_modules/
+
+#logs
+*.log
+
+#pids
+*.pid
+
