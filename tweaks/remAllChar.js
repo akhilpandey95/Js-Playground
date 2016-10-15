@@ -4,12 +4,15 @@
 */
 
 String.prototype.removeAll = function (arg) {
-    var res = ''
+    var res = '',
+        start = new Date().getTime()
     for(var x = 0; x < this.length; x++) {
         if(this[x] !== arg) {
             res += this[x]
         }
     }
+    var stop = new Date().getTime()
+    console.log(`Total Time taken is ${stop - start} millisecond(s)`)
     return res
 }
 
