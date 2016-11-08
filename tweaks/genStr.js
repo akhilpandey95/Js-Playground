@@ -12,14 +12,25 @@
 */
 
 String.prototype.genStr = function (arg) {
-    var str = "",
-        num = Math.floor(Math.random()*(Math.pow(1000, arg))).toString()
+    let start = new Date().getTime()
+    let i = 0
+    let str = ""
+    let num = Math.floor(Math.random()*(Math.pow(1000, arg))).toString()
 
-    var store = {
-        big: ['V', 'X', 'A', 'D', 'G', 'Y', 'D', 'U', 'O', 'Q']
-        lil: ['w', 'b', 'k', 'm', 'c', 'z', 'i', 's'. 'f', 'p']
+    let store = {
+        big: ['V', 'X', 'A', 'D', 'G', 'Y', 'D', 'U', 'O', 'Q'],
+        lil: ['w', 'b', 'k', 'm', 'c', 'z', 'i', 's', 'f', 'p']
     }
-    console.log(num)
+
+    while(str.length < 20) {
+        let count = Number(num[i])
+        str += num[i] + store.big[count] + store.lil[count]
+        i++
+    }
+
+    let stop = new Date().getTime()
+    console.log(`${this}${str}`)
+    console.log(`Total time taken is ${stop - start} milliseconds`)
 }
 
 var url = "https://bkt.io/"
